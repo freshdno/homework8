@@ -28,7 +28,7 @@
       src: /root/project/target/hello-1.0.war
       dest: "/tmp"
       mode: pull
-    delegate_to: 94.131.91.75
+    delegate_to: tomacat1
 
 
 
@@ -46,3 +46,7 @@
     apt:
       name: default-jdk
       state: present
+  - name: Copy war from tmp
+    copy:
+      src: /tmp/hello-1.0.war
+      dest: /var/lib/tomcat9/webapps
