@@ -10,7 +10,7 @@
       state: present
 
   - name: Ensure jdk package is present
-    copy:
+    apt:
       name: default-jdk
       state: present
 
@@ -41,6 +41,6 @@
       state: present
 
   - name: Ensure jdk package is present
-    copy:
+    apt:
       name: default-jdk
       state: present
