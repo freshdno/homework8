@@ -21,11 +21,11 @@
       version: master
 
   - name: Build project by maven
-    shell: cd /root/project/boxfuse-sample-java-war-hello && mvn -B package
+    shell: cd /root/project && mvn -B package
 
   - name: Copy war to tomcat server
     copy:
-      scr: "/root/project/boxfuse-sample-java-war-hello/target/hello-1.0.war"
+      scr: "/root/project/target/hello-1.0.war"
       dest: "/opt/tomcat/webapps/"
     delegate_to: tomcat  
 
