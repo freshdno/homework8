@@ -24,7 +24,10 @@
     shell: cd /root/project && mvn -B package
 
   - name: Copy war to tomcat server
-    
+    synchronize:
+      src: /root/project/target/hello-1.0.war
+      dest: tomcat1:"/tmp"
+      mode: pull
 
 
 
