@@ -17,15 +17,15 @@
   - name: git clone repository
     git:
       repo: "https://github.com/boxfuse/boxfuse-sample-java-war-hello.git"
-      dest: "/root/"
+      dest: "/root/project"
       version: master
 
   - name: Build project by maven
-    command: cd /root/boxfuse-sample-java-war-hello && mvn -B package
+    command: cd /root/project/boxfuse-sample-java-war-hello && mvn -B package
 
   - name: Copy war to tomcat server
     copy:
-      scr: "/root/boxfuse-sample-java-war-hello/target/hello-1.0.war"
+      scr: "/root/project/boxfuse-sample-java-war-hello/target/hello-1.0.war"
       dest: "/opt/tomcat/webapps/"
     delegate_to: tomcat  
 
