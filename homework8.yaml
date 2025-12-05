@@ -21,7 +21,7 @@
       version: master
 
   - name: Build project by maven
-    command: cd /root/project/boxfuse-sample-java-war-hello && mvn -B package
+    shell: cd /root/project/boxfuse-sample-java-war-hello && mvn -B package
 
   - name: Copy war to tomcat server
     copy:
