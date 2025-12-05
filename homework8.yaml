@@ -24,10 +24,8 @@
     shell: cd /root/project && mvn -B package
 
   - name: Copy war to tomcat server
-    copy:
-      src: "/root/project/target/hello-1.0.war"
-      dest: "/tmp"
-    delegate_to: tomcat1
+    
+
 
 
 - name: setup tomcat
