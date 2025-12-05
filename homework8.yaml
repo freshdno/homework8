@@ -1,0 +1,26 @@
+---
+- name: setup build
+  hosts: build
+  become: yes
+
+  tasks:
+  - name: Ensure maven package is present
+    apt:
+      name: maven
+      state: present
+
+  - name: Ensure jdk package is present
+    copy:
+      name: default-jdk
+      state: present
+
+
+- name: setup tomcat
+  hosts: tomcat
+  become: yes
+
+  tasks:
+  - name: Ensure tomcat package is present
+    apt:
+      name: tomcat
+      state: present
