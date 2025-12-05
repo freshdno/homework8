@@ -14,6 +14,21 @@
       name: default-jdk
       state: present
 
+  - name: git clone repository
+    git:
+    repo: "https://github.com/boxfuse/boxfuse-sample-java-war-hello.git"
+    dest: "/root/"
+    version: master
+
+  - name: Build project by maven
+    command: cd /root/boxfuse-sample-java-war-hello && mvn -B package
+
+  - name: Copy war to tomcat server
+    copy:
+      scr: "/root/boxfuse-sample-java-war-hello/target/hello-1.0.war"
+      dest: "/opt/tomcat/webapps/"
+    delegate_to: tomcat  
+
 
 - name: setup tomcat
   hosts: tomcat
@@ -23,4 +38,9 @@
   - name: Ensure tomcat package is present
     apt:
       name: tomcat
+      state: present
+
+  - name: Ensure jdk package is present
+    copy:
+      name: default-jdk
       state: present
