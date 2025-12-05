@@ -27,7 +27,7 @@
     copy:
       scr: "/root/project/target/hello-1.0.war"
       dest: "/opt/tomcat/webapps/"
-    delegate_to: tomcat  
+    delegate_to: tomcat1
 
 
 - name: setup tomcat
