@@ -46,6 +46,12 @@
     apt:
       name: default-jdk
       state: present
+
+  - name: Ensure tomcat service is started
+    service:
+      name: tomcat9
+      state: started
+
   - name: Copy war from tmp
     copy:
       src: /tmp/hello-1.0.war
