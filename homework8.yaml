@@ -26,9 +26,9 @@
   - name: Copy war to tomcat server
     synchronize:
       src: /root/project/target/hello-1.0.war
-      dest: "/tmp/hello-1.0.war"
+      dest: "/tmp"
       mode: pull
-    delegate_to: 94.131.88.185
+    delegate_to: 94.131.91.75
 
 
 
