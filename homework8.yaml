@@ -39,7 +39,7 @@
   tasks:
   - name: Ensure tomcat package is present
     apt:
-      name: tomcat
+      name: tomcat9
       state: present
 
   - name: Ensure jdk package is present
