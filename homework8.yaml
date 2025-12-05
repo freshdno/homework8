@@ -26,7 +26,7 @@
   - name: Copy war to tomcat server
     copy:
       src: "/root/project/target/hello-1.0.war"
-      dest: "/opt/tomcat/webapps/"
+      dest: "/tmp"
     delegate_to: tomcat1
 
 
