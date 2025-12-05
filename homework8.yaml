@@ -28,6 +28,7 @@
       src: /root/project/target/hello-1.0.war
       dest: "/tmp"
       mode: pull
+    delegate_to: localhost
 
 
 
